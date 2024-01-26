@@ -1,0 +1,449 @@
+html, body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+
+        font-family:    sans-serif;
+            font-weight:   400;
+
+    }
+    table tr td{
+  vertical-align: middle;
+}
+    
+    .note-editor{
+    color:black !important;
+    background-color: transparent !important;
+    }
+    section{
+        min-height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+        .lead{
+            font-family:    sans-serif;
+            font-weight:   400;
+            font-size: 18px;
+        }
+
+        input[placeholder].lead{
+          font-size:  16px;
+          padding-left:  5px;
+        }
+        option.lead{
+          font-size: 14px;
+          font-weight: 100;
+        }
+        optgroup.lead{
+          font-size: 16px;
+          font-weight: 100;
+        }
+        .black{
+          color: black;
+        }
+ 
+
+
+    #janelaInicial{
+    	box-sizing: border-box;
+    	height: 1300px;
+    	width: 100%;
+    	position: fixed;
+    	background-color: #428bca;
+    	text-align: center;
+    	margin: -5px;
+    	margin-top: -6px;
+    	margin-left: -20px;
+    	padding-top: 260px;
+    }
+
+    #janelaInicial h1{
+    	font-size: 30pt;
+    	font-weight: bolder;
+    	color: white;
+    }
+
+
+          #janelaEspera{
+            margin-top: 50px;
+            height: 180%;
+            padding-top: 130px;
+
+            background-color: rgba(0,0,0,0.3);
+            position: absolute;
+            width: 100%;
+            padding: auto;
+            color: white;
+            z-index: 10;
+          }
+
+          #janelaEspera p{
+            text-align: center;
+          } 
+          #janelaEspera p strong{
+            font-weight: 600;
+          }
+        .janelaMensagem .modal-dialog{
+          width: 50%;
+          margin-left: -25%;
+        }
+
+        @media (max-width: 768px) {
+            .janelaMensagem .modal-dialog{
+                width: 94%;
+                margin-left: 3%;
+            }             
+        }
+            
+            .janelaMensagem .modal-header h4{
+                font-weight: bolder;
+            }
+
+            .janelaMensagem .modal-body{
+              padding-top:  25px;
+              padding-bottom:   25px;
+            }
+            
+
+.cabecalhoPrincipal{
+	margin-top: -30pt;
+}
+
+.cabecalhoPrincipal h1{
+	font-weight: bolder;
+}
+input[disabled]{
+      background-color: white !important;
+    }
+
+
+.btn{
+	padding: 5px 10px;
+}
+aside>#sidebar>ul>li>a{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+#sidebar{
+	margin-left: -250px;
+}
+
+#sidebar > ul{
+	display: none;
+}
+
+#main-content{
+	margin-left: 0px;
+}
+
+section section{
+	padding: 5px;
+}
+
+  .dt-buttons button{
+    background-color: #428bca !important;
+    color:  white !important;
+    border: solid white 1px; 
+    font-weight: 600;
+    outline:  2; 
+  }
+
+
+
+
+
+.modal-dialog {
+  position: absolute;
+}
+
+#paraAnoLectivo{
+	padding-top: 	10px;
+	background-color: #428bca;
+	border-bottom: solid white 1px;
+}
+
+#paraAnoLectivo div{
+	font-size: 17pt;
+	font-weight: bolder;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	color: white; 
+
+}
+
+.imagemUsuarioCorrente.principal{
+	width: 50px;
+	height: 50px;
+
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.imagemUsuarioCorrente.medio{
+	width: 70px;
+	height: 70px;
+}
+
+.quantidadeTotal{
+    background-color: #428bca;
+    color: white;
+    font-weight: bolder;
+    font-size: 14pt;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 50%; 
+}
+
+        .modal .modal-dialog{
+            width: 50%;
+            margin-left: -25%;
+        }
+        #formularioMatricula .modal-dialog, #formularioCadastro .modal-dialog, #formularioCadastro .modal-dialog,
+         #formularioCadastro .modal-dialog, #formularioBackupAluno .modal-dialog{
+          width: 60%; 
+          margin-left: -30%;
+        }
+
+        
+
+        
+
+        .paternSubMenuInterno h1{
+          padding: 0px;
+          background-color:   green;
+          padding: 0px;
+          height:  0px;
+          margin-top:  10px;
+        }
+
+
+
+        .toolTipe{
+        position: absolute;
+        margin-top: -160px;
+       }
+
+       .toolTipe img{
+          width: 150px;
+          max-width: 150px;
+          height: 150px;
+          max-height: 150px;
+          min-height: 150px;
+
+          border-radius: 5px;
+          border: none;
+       }
+
+       .vermelha{
+        color: red;
+       }
+        .azul{
+        color: blue;
+       }
+
+
+
+
+.sidebar-menu>li a span{
+  font-size:  14pt;
+  font-weight:  300;
+  padding: 0px;
+  margin-top: -10px;
+}
+
+
+
+
+
+  header #notificacoes li:nth-child(3){
+    margin-top: -10px;
+  }
+
+  header #notificacoes li{
+    background-color: white;
+    text-align: justify;  
+    width: 250px;
+    padding: 3px;
+    border-bottom: solid rgba(0,0,0,0.1) 1px;
+  }
+  header #notificacoes li a{
+    color:black;
+    text-align: justify;
+    font-weight: 400;
+    font-family: sans-serif;
+  }
+
+   header #notificacoes li.cab p{
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  #688a7e;
+  }
+  header #notificacoes li.cab{
+    padding: 0px;
+  }
+
+  header #messages{
+    background-color: white !important;
+    margin-left: -260px !important; 
+    width: 300px !important; 
+  }
+  header #messages li.liMensagem{
+    padding: 4px !important;
+    /*cursor: pointer;*/
+  }
+  header #messages li img{
+    width: 50px !important;
+    height: 50px !important;
+  }
+  header #messages li span{
+    color: black !important;
+  }
+
+   header #messages li .subject{
+    margin-top: -50px !important;
+    margin-left: 50px;
+    margin-bottom: 10px !important;
+  }
+
+  header #messages li .subject .from{
+    font-size: 11pt !important;
+    font-weight: bolder;
+  }
+   header #messages li .rodape{
+    margin-top: 20px;
+    margin-bottom: 10px;
+   }
+   header #messages li .rodape a{
+    margin-right: 10px;
+    text-decoration: none;
+    display: inline;
+    padding: 7px !important;
+    border-radius: 10px;
+   }
+  header #messages li .rodape a.msgLer, header #messages li .rodape a.msgLer:hover{
+    color: #fff !important;
+    background-color: #5cb85c !important;
+  }
+  header #messages li .rodape a.msgVisualizada, header #messages li .rodape a.msgVisualizada:hover{
+    color: #fff !important;
+    background-color: #428bca !important;
+    border-color: #357ebd !important;
+  }
+
+  header #messages li .rodape a.visualizarMensagens, header #messages li .rodape a.visualizarMensagens:hover{
+    color: #fff !important;
+    background-color: #f0ad4e !important;
+    border-color: #357ebd !important;
+  }
+    
+
+  @media (max-width: 768px) {
+             
+            #formularioMatricula .modal-dialog, #formularioCadastro .modal-dialog, #formularioInscricao .modal-dialog, .modal .modal-dialog{
+                width: 94%;
+                margin-left: 3%;
+ 
+            }
+            .row{
+              padding: 0px;
+            }
+            .row>div{
+              margin-bottom: 10px;
+            }
+             .modal .modal-dialog .label{
+                text-align: left;
+             }
+
+             #containers{
+              padding: 10px !important;
+             }
+        }
+
+         @media (max-width: 991px) {              
+              #containers{
+              padding: 10px !important;
+             }     
+        }
+
+        @media (max-width:320px) {
+            .top-menu{
+                margin-left: -80px; 
+                margin-top: -10px;
+                margin-right: -18px;
+             }
+             .dropdown-toggle{
+                margin-left: -10px;
+             }
+
+        }
+
+  select.form-control.lead{
+    font-size: 14px;
+    font-family: sans-serif;  
+  }
+
+
+
+  .modal .modal-header{
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+  }
+
+  .modal .modal-body{
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-top: 0px;
+    margin-bottom:  -10px;
+    padding-top:  5px;
+    padding-bottom:   15px;
+  }
+
+  .modal .modal-footer{
+      background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+  }
+
+  .mensagemErroFormulario{
+    color: red;
+    font-weight: 600;
+  }
+
+
+
+ div#rodapePrincipal>div{
+    margin: 0;
+    font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 12.3pt;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    padding: 10px;
+    margin: 5px;
+    margin-top: -20px;
+    margin-bottom: -30px;
+    border-top: solid rgba(0, 0, 0, 0.05) 1px;
+    background-color: #fff;
+ }
+  
+
+
+
+
+              
+
+
+
+
+
+
+
+
+

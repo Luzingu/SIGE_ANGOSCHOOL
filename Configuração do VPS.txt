@@ -1,0 +1,89 @@
+/var/www/angoschool/angoschool
+/var/log/apache2
+extension=mongodb.so
+
+DB AngoSchool: 154.38.185.120
+Server: 66.94.99.12
+MensiYeto: 65.21.183.199
+
+Topografia Hidraulica e Construcoes Rurais 11
+
+Topografica 10
+Hidraulica 11
+Construcoes Rurais 12
+
+APACHE2
+sudo apt update
+sudo apt install apache2
+sudo ufw app list
+sudo ufw allow 'Apache'
+sudo ufw status
+sudo service apache2 reload
+sudo service apache2 restart
+
+PHP 8.2
+
+sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/apache2
+apt install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+apt install php8.2
+sudo apt install php8.2 php8.2-{bcmath,fpm,xml,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
+
+PCL
+sudo add-apt-repository ppa:sweptlaser/python3-pcl
+sudo apt update
+sudo apt install python3-pcl
+
+sudo apt-get install php-pear
+sudo apt-get install php-xml php8.2-xml
+sudo apt-get install php8.2-dev
+sudo pecl install mongodb
+
+(MONGODB)
+sudo vim /etc/mongod.conf
+sudo systemctl restart mongodb
+db.createUser(
+{
+user: "abigael",
+pwd: "Renapol1..abigael",
+roles: [ { role: "root", db: "admin" } ],
+  passwordDigestor: "server"
+})
+db.dropUser("abigael")
+
+SSL
+apt-get install openssl -y
+sudo vim /etc/apache2/sites-available/default-ssl.conf
+sudo vim /etc/apache2/sites-available/000-default.conf
+a2ensite default-ssl.conf
+systemctl restart apache2
+vim /etc/apache2/ports.conf
+
+sudo apt install certbot python3-certbot-apache
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+sudo ufw status
+sudo ufw allow 'Apache Full'
+sudo ufw delete allow 'Apache'
+sudo ufw status
+
+sudo certbot --apache
+sudo systemctl status certbot.timer
+sudo certbot renew --dry-run
+
+redirect / https://angoschool.com/
+sudo chown -R www-data:www-data /var/www/html/angoschool/Ficheiros
+
+sudo chmod 777 +rwx /var/www/html/angoschool/Ficheiros/*
+
+sudo chown -R www-data:www-data /var/www/html/angoschool/icones
+
+mongorestore --uri="mongodb://abigael:Renapol1..abigael@154.38.185.120:27019/?authMechanism=SCRAM-SHA-256" --db nome_dd --colection nome_colecao --dir /var/backup/
+
+mongodump --uri="mongodb://abigael:Renapol1..abigael@154.38.185.120:27019/?authMechanism=SCRAM-SHA-256" --out /var/backup/2023-01-07
+
+mongodump --uri="mongodb://abigael:Renapol1..abigael@65.21.183.199:27019/?authMechanism=SCRAM-SHA-256" --out /var/backup/2023-01-07
+
+

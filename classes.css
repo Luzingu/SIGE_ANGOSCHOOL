@@ -1,0 +1,46 @@
+.dt-buttons button{
+    background-color: #428bca !important;
+    color:  white !important;
+    border: solid white 1px; 
+    font-weight: 600;
+    outline:  2; 
+  }
+.corVermelha{
+	color: red;
+}
+.colorTransparente{
+	background-color: transparent;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.bolder{
+	font-weight: bolder;
+}
+
+.corPrimary{
+	background-color: #428bca !important;
+}
+
+.maiuscula{
+	text-transform: uppercase;
+}
+.sublinhado{
+	text-decoration: underline;
+}
+table tr td{
+	vertical-align: middle;
+}
+
+@media (max-width: 991px){
+      .lab{
+        text-align: left !important;
+      }
+      .labCenter{
+        text-align: center;
+      }
+  }
+
+  

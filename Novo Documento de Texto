@@ -1,0 +1,3 @@
+https://invoice.minfin.gov.ao/portalSupplier/#/
+
+$m->db->alunos_3->updateMany([], ['$unset'=>['classeReconfirmacao_'.$a["idPEscola"].'_'.$ano =>1]]);

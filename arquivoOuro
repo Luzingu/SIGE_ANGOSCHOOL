@@ -1,0 +1,426 @@
+
+
+
+    
+    foreach($m->selectArray("nomedisciplinas", [], ["disciplinas.idDiscCurso"=>22], ["disciplinas"], "", [], ["disciplinas.ordenacao"=>1]) as $a)
+    {
+        $chaveDisciplina = "pos-".$a["idPNomeDisciplina"]."-".$a["disciplinas"]["classeDisciplina"]."-".$a["disciplinas"]["idDiscCurso"]."-curriculo1-I";
+
+        $m->inserirObjecto("nomedisciplinas", "disciplinas", "idPDisciplina", "idFNomeDisciplina, classeDisciplina, chaveDisciplina, tipoDisciplina, idDiscCurso, idDiscCurriculo, ordenacao, periodoDisciplina, semestreDisciplina, anosLectivos, camposAvaliacoes-15219, camposAvaliacoesExt-15219", [$a["idPNomeDisciplina"], $a["disciplinas"]["classeDisciplina"], $chaveDisciplina, $a["disciplinas"]["tipoDisciplina"],  $a["disciplinas"]["idDiscCurso"], "curriculo1", $a["disciplinas"]["ordenacao"], "pos", $a["disciplinas"]["semestreDisciplina"], $a["disciplinas"]["anosLectivos"], $a["disciplinas"]["camposAvaliacoes-15219"], $a["disciplinas"]["camposAvaliacoesExt-15219"]], ["idPNomeDisciplina"=>$a["idPNomeDisciplina"]]);
+    }
+    foreach($m->selectArray("alunosmatriculados", ["escola.idGestLinguaEspecialidade", "grupo", "idPMatricula", "reconfirmacoes.classeReconfirmacao", "reconfirmacoes.idMatCurso"], ["reconfirmacoes.idReconfAno"=>15219, "reconfirmacoes.idReconfEscola"=>$_SESSION['idEscolaLogada'], "escola.idMatEscola"=>$_SESSION['idEscolaLogada'], "escola.periodoAluno"=>"reg", "idPMatricula"=>68442, "reconfirmacoes.estadoReconfirmacao"=>"A", "reconfirmacoes.idMatCurso"=>3], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $a)
+    {
+        if($a["escola"]["idGestLinguaEspecialidade"] == 20)
+        {
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [22, $a["idPMatricula"]."-22-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>20, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [22, $a["idPMatricula"]."-22-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>20, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [21, $a["idPMatricula"]."-21-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>23, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [21, $a["idPMatricula"]."-21-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+        }
+        else
+        {
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [23, $a["idPMatricula"]."-23-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [23, $a["idPMatricula"]."-23-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [20, $a["idPMatricula"]."-20-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>22, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [20, $a["idPMatricula"]."-20-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>22, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+        }
+
+    }
+
+    foreach($m->selectArray("alunosmatriculados", ["idPMatricula", "grupo", "pautas.idPautaDisciplina", "pautas.idPPauta", "pautas.mf", "pautas.semestrePauta", "pautas.idPautaCurso", "pautas.classePauta", "arquivo_pautas.idPautaDisciplina", "arquivo_pautas.idPPauta", "arquivo_pautas.mf", "arquivo_pautas.semestrePauta", "arquivo_pautas.idPautaCurso", "arquivo_pautas.classePauta", "arquivo_pautas.idPautaEscola", "arquivo_pautas.idPautaAno", "reconfirmacoes.classeReconfirmacao", "reconfirmacoes.idMatCurso"], ["reconfirmacoes.idReconfAno"=>15219, "idPMatricula"=>68442, "reconfirmacoes.idReconfEscola"=>$_SESSION["idEscolaLogada"], "escola.idMatEscola"=>$_SESSION["idEscolaLogada"], "reconfirmacoes.estadoReconfirmacao"=>"A"], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $a)
+    {
+       
+        foreach(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"]]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"]]), "mf DESC");
+            if(count($array) > 1)
+            {
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+
+        foreach(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]), "mf DESC");
+   
+            if(count($array) > 1)
+            {
+                
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+    }
+
+//Corrigir erros da chave...
+foreach($m->selectArray("alunosmatriculados", ["idPMatricula", "grupo", "pautas.idPautaDisciplina", "pautas.idPPauta", "pautas.mf", "pautas.semestrePauta", "pautas.idPautaCurso", "pautas.classePauta", "arquivo_pautas.idPautaDisciplina", "arquivo_pautas.idPPauta", "arquivo_pautas.mf", "arquivo_pautas.semestrePauta", "arquivo_pautas.idPautaCurso", "arquivo_pautas.classePauta", "arquivo_pautas.idPautaEscola", "arquivo_pautas.idPautaAno", "reconfirmacoes.classeReconfirmacao", "reconfirmacoes.idMatCurso"], ["reconfirmacoes.idReconfAno"=>15219, "reconfirmacoes.idReconfEscola"=>$_SESSION["idEscolaLogada"], "escola.idMatEscola"=>$_SESSION["idEscolaLogada"], "reconfirmacoes.estadoReconfirmacao"=>"A"], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $a)
+    {
+       
+        foreach(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"]]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"]]), "mf DESC");
+            if(count($array) > 1)
+            {
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+
+        foreach(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]), "mf DESC");
+   
+            if(count($array) > 1)
+            {
+                
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+    foreach($m->selectArray("nomecursos", [], ["cursos.idCursoEscola"=>$_SESSION['idEscolaLogada']], ["cursos"], "", [], ["nomeCurso"=>1]) as $curso) 
+    {  
+        
+        foreach(listarItensObjecto($curso, "classes") as $classe)
+        {
+            $m = new manipuladorPauta();
+            foreach($m->selectArray("alunosmatriculados", ["idPMatricula", "grupo", "pautas.classePauta", "pautas.idPautaCurso", "pautas.avaliacoesContinuasI", "pautas.macI", "pautas.idPPauta"], ["reconfirmacoes.idReconfAno"=>15219, "reconfirmacoes.idReconfEscola"=>1 , "escola.idMatEscola"=>1, "reconfirmacoes.estadoReconfirmacao"=>"A", "reconfirmacoes.classeReconfirmacao"=>$classe["identificador"], "reconfirmacoes.idMatCurso"=>$curso["idPNomeCurso"]], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $aluno)
+            {
+                foreach(listarItensObjecto($aluno, "pautas", ["idPautaCurso=".$curso["idPNomeCurso"], "classePauta=".$classe["identificador"]]) as $pauta)
+                {
+                    $macI = isset($pauta["macI"])?$pauta["macI"]:"";
+                    $avalC = isset($pauta["avaliacoesContinuasI"])?$pauta["avaliacoesContinuasI"]:"";
+                    if(($macI =="" || $macI == NULL) && $avalC!="")
+                    {
+                        $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "avaliacoesContinuasI", [""], ["idPMatricula"=>$aluno["idPMatricula"]], ["idPPauta"=>$pauta["idPPauta"]]);
+                    }
+                }
+               $m->calcularObservacaoFinalDoAluno($a["idPMatricula"]);
+            }
+        }
+    }
+
+    foreach($m->selectArray("alunosmatriculados", ["escola.idGestLinguaEspecialidade", "grupo", "idPMatricula", "reconfirmacoes.classeReconfirmacao", "reconfirmacoes.idMatCurso"], ["reconfirmacoes.idReconfAno"=>15219, "reconfirmacoes.idReconfEscola"=>$_SESSION['idEscolaLogada'], "escola.idMatEscola"=>$_SESSION['idEscolaLogada'], "escola.periodoAluno"=>"reg", "idPMatricula"=>68442, "reconfirmacoes.estadoReconfirmacao"=>"A", "reconfirmacoes.idMatCurso"=>3], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $a)
+    {
+        if($a["escola"]["idGestLinguaEspecialidade"] == 20)
+        {
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [22, $a["idPMatricula"]."-22-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>20, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [22, $a["idPMatricula"]."-22-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>20, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [21, $a["idPMatricula"]."-21-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>23, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [21, $a["idPMatricula"]."-21-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+        }
+        else
+        {
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [23, $a["idPMatricula"]."-23-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [23, $a["idPMatricula"]."-23-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>21, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+
+            $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "idPautaDisciplina, chavePauta", [20, $a["idPMatricula"]."-20-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>22, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+            
+            $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "idPautaDisciplina, chavePauta", [20, $a["idPMatricula"]."-20-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-I"], ["idPMatricula"=>$a["idPMatricula"]], ["idPautaDisciplina"=>22, "classePauta"=>$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso"=>$a["reconfirmacoes"]["idMatCurso"]]);
+        }
+
+    }
+
+    foreach($m->selectArray("alunosmatriculados", ["idPMatricula", "grupo", "pautas.idPautaDisciplina", "pautas.idPPauta", "pautas.mf", "pautas.semestrePauta", "pautas.idPautaCurso", "pautas.classePauta", "arquivo_pautas.idPautaDisciplina", "arquivo_pautas.idPPauta", "arquivo_pautas.mf", "arquivo_pautas.semestrePauta", "arquivo_pautas.idPautaCurso", "arquivo_pautas.classePauta", "arquivo_pautas.idPautaEscola", "arquivo_pautas.idPautaAno", "reconfirmacoes.classeReconfirmacao", "reconfirmacoes.idMatCurso"], ["reconfirmacoes.idReconfAno"=>15219, "idPMatricula"=>68442, "reconfirmacoes.idReconfEscola"=>$_SESSION["idEscolaLogada"], "escola.idMatEscola"=>$_SESSION["idEscolaLogada"], "reconfirmacoes.estadoReconfirmacao"=>"A"], ["escola", "reconfirmacoes"], "", [], array("nomeAluno"=>1)) as $a)
+    {
+       
+        foreach(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"]]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"]]), "mf DESC");
+            if(count($array) > 1)
+            {
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+
+        foreach(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]) as $p)
+        {
+            $array = ordenar(listarItensObjecto($a, "arquivo_pautas", ["classePauta=".$a["reconfirmacoes"]["classeReconfirmacao"], "idPautaCurso=".$a["reconfirmacoes"]["idMatCurso"], "idPautaDisciplina=".$p["idPautaDisciplina"], "idPautaEscola=".$_SESSION['idEscolaLogada'], "idPautaAno=15219"]), "mf DESC");
+   
+            if(count($array) > 1)
+            {
+                
+                $idPPautaFicar ="";
+                $mf=0;
+                foreach($array as $arr)
+                {
+                    $mfCmp = isset($arr["mf"])?$arr["mf"]:0;
+                    $mfCmp = floatval($mfCmp);
+
+                    if($mfCmp >= $mf)
+                    {
+                        $mf = $mfCmp;
+                        $idPPautaFicar = $arr["idPPauta"];
+                    }
+                }
+                foreach($array as $arr)
+                {
+                    if($arr["idPPauta"] != $idPPautaFicar)
+                    {
+                        $m->excluirItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$arr["idPPauta"]]);
+                    }
+                }
+                $m->editarItemObjecto("alunos_".$a["grupo"], "arquivo_pautas", "chavePauta", [$a["idPMatricula"]."-".valorArray($array, "idPautaDisciplina")."-".$a["reconfirmacoes"]["classeReconfirmacao"]."-".$a["reconfirmacoes"]["idMatCurso"]."-".$_SESSION['idEscolaLogada']."-15219-".valorArray($array, "semestrePauta")], ["idPMatricula"=>$a["idPMatricula"]], ["idPPauta"=>$idPPautaFicar]);
+            }
+        }
+    }
+
+    $m->db->alunos_0->createIndex(["arquivo_pautas.chavePauta"=>1]);
+    $m->db->alunos_0->createIndex(["arquivo_pautas.classePauta"=>1]);
+    $m->db->alunos_0->createIndex(["arquivo_pautas.idPautaAno"=>1]);
+    $m->db->alunos_0->createIndex(["arquivo_pautas.idPautaCurso"=>1]);
+    $m->db->alunos_0->createIndex(["arquivo_pautas.idPautaDisciplina"=>1]);
+    $m->db->alunos_0->createIndex(["arquivo_pautas.idPautaEscola"=>1]);
+    $m->db->alunos_0->createIndex(["biAluno"=>1]);
+    $m->db->alunos_0->createIndex(["escola.idMatCurso"=>1]);
+    $m->db->alunos_0->createIndex(["classesReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["idPMatricula"=>1], ["unique"=>1]);
+    $m->db->alunos_0->createIndex(["escola.idMatEscola"=>1]);
+    $m->db->alunos_0->createIndex(["escolasReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["escolasReconfirmacao"=>1, "idCursosReconfirmacao"=>1, "classesReconfirmacao"=>1, "turmasReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["idCursosReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["pagamentos.idHistoricoEscola"=>1]);
+    $m->db->alunos_0->createIndex(["nomeAluno"=>1]);
+    $m->db->alunos_0->createIndex(["numeroInterno"=>1]);
+    $m->db->alunos_0->createIndex(["pagamentos.dataPagamento"=>1]);
+    $m->db->alunos_0->createIndex(["pagamentos.horaPagamento"=>1]);
+    $m->db->alunos_0->createIndex(["pagamentos.idHistoricoAno"=>1]);
+    $m->db->alunos_0->createIndex(["pagamentos.idTipoEmolumento"=>1]);
+    $m->db->alunos_0->createIndex(["pautas.chavePauta"=>1]);
+    $m->db->alunos_0->createIndex(["pautas.classePauta"=>1]);
+    $m->db->alunos_0->createIndex(["pautas.idPautaCurso"=>1]);
+    $m->db->alunos_0->createIndex(["pautas.idPautaDisciplina"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.chaveReconf"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.classeReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.estadoReconfirmacao"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.idMatCurso"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.idReconfAno"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.idReconfEscola"=>1]);
+    $m->db->alunos_0->createIndex(["reconfirmacoes.nomeTurma"=>1]);
+    $m->db->alunos_0->createIndex(["turmasReconfirmacao"=>1]);
+    $m->db->anolectivo->createIndex(["idPAno"=>1]);
+
+    $m->db->areas->createIndex(["idPArea"=>1]);
+    $m->db->areas->createIndex(["instituicoes.idEscola"=>1]);
+
+    $m->db->comunicados->createIndex(["idPComunicado"=>1]);
+    $m->db->comunicados->createIndex(["idPEscola"=>1]);
+    $m->db->comunicados->createIndex(["idPEscola"=>1, "data"=>1]);
+
+    $m->db->div_terit_comunas->createIndex(["idComunMunicipio"=>1]);
+    $m->db->div_terit_municipios->createIndex(["idMunProvincia"=>1]);
+    $m->db->div_terit_paises->createIndex(["idPPais"=>1]);
+    $m->db->div_terit_provincias->createIndex(["idProvPais"=>1]);
+
+    $m->db->divisaoprofessores->createIndex(["chavePrincipal"=>1]);
+    $m->db->divisaoprofessores->createIndex(["classe"=>1]);
+    $m->db->divisaoprofessores->createIndex(["idDivAno"=>1]);
+    $m->db->divisaoprofessores->createIndex(["idDivCurso"=>1]);
+    $m->db->divisaoprofessores->createIndex(["idPEscola"=>1]);
+    $m->db->divisaoprofessores->createIndex(["idPEscola"=>1, "idDivAno"=>1, "classe"=>1, "nomeTurmaDiv"=>1, "semestre"=>1]);
+    $m->db->divisaoprofessores->createIndex(["idPNomeCurso"=>1]);
+
+    $m->db->entidadesonline->createIndex(["dataSaida"=>1]);
+    $m->db->entidadesonline->createIndex(["estadoExpulsao"=>1, "dataSaida"=>1, "horaSaida"=>1]);
+    $m->db->entidadesonline->createIndex(["horaSaida"=>1]);
+    $m->db->entidadesonline->createIndex(["idPEscola"=>1]);
+    $m->db->entidadesonline->createIndex(["idPOnline"=>1]);
+    $m->db->entidadesonline->createIndex(["idUsuarioLogado"=>1]);
+    $m->db->entidadesonline->createIndex(["idUsuarioLogado"=>1, "estadoExpulsao"=>1]);
+    $m->db->entidadesonline->createIndex(["idUsuarioLogado"=>1, "tipoUsuario"=>1, "estadoExpulsao"=>1]);
+    $m->db->entidadesonline->createIndex(["tipoUsuario"=>1]);
+
+    $m->db->entidadesprimaria->createIndex(["acessos.idEscola"=>1]);
+    $m->db->entidadesprimaria->createIndex(["aval_desemp.chaveAvaliacao"=>1]);
+    $m->db->entidadesprimaria->createIndex(["aval_desemp.idAvalProfEscola"=>1]);
+    $m->db->entidadesprimaria->createIndex(["classes_aceso.idClAcEscola"=>1]);
+
+    $m->db->entidadesprimaria->createIndex(["escola.chaveEnt"=>1]);
+    $m->db->entidadesprimaria->createIndex(["escola.idEntidadeEscola"=>1]);
+    $m->db->entidadesprimaria->createIndex(["idPEntidade"=>1]);
+    $m->db->entidadesprimaria->createIndex(["niveis_acesso.chave"=>1]);
+    $m->db->entidadesprimaria->createIndex(["numeroInternoEntidade"=>1]);
+
+    $m->db->escolas->createIndex(["acessos.idEscola"=>1]);
+    $m->db->escolas->createIndex(["aval_desemp.chaveAvaliacao"=>1]);
+    $m->db->escolas->createIndex(["classes_aceso.idClAcEscola"=>1]);
+    $m->db->escolas->createIndex(["comuna"=>1]);
+    $m->db->escolas->createIndex(["emolumentos.chaveEmolumento"=>1]);
+    $m->db->escolas->createIndex(["escola.chaveEnt"=>1]);
+    $m->db->escolas->createIndex(["estadoperiodico.chaveEstado"=>1]);
+    $m->db->escolas->createIndex(["gerencMatricula.chavePrincipal"=>1]);
+    $m->db->escolas->createIndex(["gerencPerido.chaveGerPerido"=>1]);
+    $m->db->escolas->createIndex(["idPEscola"=>1]);
+    $m->db->escolas->createIndex(["municipio"=>1]);
+    $m->db->escolas->createIndex(["niveis_acesso.chave"=>1]);
+    $m->db->escolas->createIndex(["provincia"=>1]);
+
+    $m->db->horario->createIndex(["chaveH"=>1]);
+    $m->db->horario->createIndex(["classe"=>1]);
+    $m->db->horario->createIndex(["idPEntidade"=>1]);
+    $m->db->horario->createIndex(["idPEscola"=>1]);
+    $m->db->horario->createIndex(["idPEscola"=>1, "idHorAno"=>1, "classe"=>1, "turma"=>1, "semestre"=>1, "idPNomeCurso"=>1]);
+    $m->db->horario->createIndex(["idPNomeCurso"=>1]);
+    $m->db->horario->createIndex(["turma"=>1]);
+
+    $m->db->listaturmas->createIndex(["classe"=>1]);
+    $m->db->listaturmas->createIndex(["idPEscola"=>1]);
+    $m->db->listaturmas->createIndex(["idPNomeCurso"=>1]);
+    $m->db->listaturmas->createIndex(["nomeTurma"=>1]);
+
+    $m->db->mensagens->createIndex(["estadoMensagem"=>1]);
+    $m->db->mensagens->createIndex(["idEmissorEnt"=>1]);
+    $m->db->mensagens->createIndex(["idEmissorMat"=>1]);
+    $m->db->mensagens->createIndex(["idReceptorEnt"=>1]);
+    $m->db->mensagens->createIndex(["idReceptorMat"=>1]);
+    $m->db->mensagens->createIndex(["receptor"=>1]);
+    $m->db->mensagens->createIndex(["receptor"=>1, "estadoMensagem"=>1]);
+
+    $m->db->menus->createIndex(["idPMenu"=>1]);
+
+    $m->db->nomecursos->createIndex(["cursos.chaveCurso"=>1]);
+    $m->db->nomecursos->createIndex(["cursos.estadoCurso"=>1]);
+    $m->db->nomecursos->createIndex(["cursos.idCursoEscola"=>1]);
+    $m->db->nomecursos->createIndex(["idPMenu"=>1]);
+    $m->db->nomecursos->createIndex(["idPNomeCurso"=>1]);
+
+    $m->db->nomedisciplinas->createIndex(["disciplinas.chaveDisciplina"=>1]);
+    $m->db->nomedisciplinas->createIndex(["disciplinas.classeDisciplina"=>1]);
+    $m->db->nomedisciplinas->createIndex(["disciplinas.estadoDisciplina"=>1]);
+    $m->db->nomedisciplinas->createIndex(["disciplinas.idDiscCurso"=>1]);
+    $m->db->nomedisciplinas->createIndex(["disciplinas.idDiscEscola"=>1]);
+    $m->db->nomedisciplinas->createIndex(["idPNomeDisciplina"=>1]);
+
+    $m->db->pagamentos_matricula_inscricao->createIndex(["dataPagamento"=>1]);
+    $m->db->pagamentos_matricula_inscricao->createIndex(["idPagAno"=>1]);
+    $m->db->pagamentos_matricula_inscricao->createIndex(["idPagEscola"=>1]);
+
+    $m->db->payments->createIndex(["anos_lectivos.estadoAnoL"=>1]);
+    $m->db->payments->createIndex(["anos_lectivos.idAnoEscola"=>1]);
+    $m->db->payments->createIndex(["anos_lectivos.idAnoEscola"=>1, "anos_lectivos.estadoAnoL"=>1]);
+    $m->db->payments->createIndex(["dataEmissao"=>1]);
+    $m->db->payments->createIndex(["idDocEscola"=>1]);
+    $m->db->payments->createIndex(["idPDocumento"=>1]);
+    $m->db->payments->createIndex(["identificacaoUnica"=>1, "idDocEscola"=>1]);
+    $m->db->payments->createIndex(["identificadorCliente"=>1]);
+    $m->db->payments->createIndex(["nifCliente"=>1]);
+    $m->db->payments->createIndex(["tipoDocumento"=>1]);
+
+    $m->db->tipos_emolumentos->createIndex(["idPTipoEmolumento"=>1]);
+
+    https://invoice.minfin.gov.ao/portalSupplier/
